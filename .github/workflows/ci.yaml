@@ -7,7 +7,7 @@ on: [push]
 jobs:
     build:
         runs-on: ubuntu-latest
-        
+
 
         strategy:
             matrix:
@@ -22,7 +22,7 @@ jobs:
            - name: setup python
              uses: actions/setup/python@v2
              with:
-                python-version: ${{matrix.python-version}}
+                python-version: ${{ matrix.python-version }}
 
            - name: install dependencies
              run: |
@@ -36,7 +36,7 @@ jobs:
                 python -m unittest discover
 
            - name: notify us of success
-             run: echo "Test passed on Python ${{matrix.python-version}}"
+             run: echo "Test passed on Python ${{ matrix.python-version }}"
              if: success()   
 
 
