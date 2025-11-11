@@ -1,0 +1,16 @@
+name: Elsa Custom Action CI
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v2
+
+        - name: hello world custom action
+          uses: ElsaDevOps/elsa-custom@master
+          with:
+            who-to-greet: 'Elsa'
